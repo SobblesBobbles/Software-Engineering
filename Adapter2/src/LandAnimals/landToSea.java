@@ -4,7 +4,11 @@ import SeaAnimals.Shark;
 
 public class landToSea implements SeaAnimalBehaviour{
 	
-	Rabbit r = new Rabbit();
+	Rabbit r;
+	
+	public landToSea(Rabbit r) {
+		this.r = r;
+	}
 	
 
 	

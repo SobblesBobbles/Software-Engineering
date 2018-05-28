@@ -18,9 +18,13 @@ public class theWorld {
 		 * Swim- Although Swim is a shark Behaviour, the Rabbit_Adapter_Shark converts the Swim method into a Run method,
 		 * the equivalent of Swim to a Rabbit object. Although this is not traditional to the Adapter Pattern, 
 		 * It was fun to implement. 
+		 * 
+		 * Update- since corrected, now the adapter is passed the object it is adapting, not creating a new object on the spot.
 		 */
 		
-		landToSea rabbit_Adapter_Shark = new landToSea();
+		Rabbit R = new Rabbit();
+		
+		landToSea rabbit_Adapter_Shark = new landToSea(R);
 		
 		//this outputs that the Rabbit is running, not that the Rabbit is Swimming, Adapting the method to its logical 
 		// Equivalent. 
