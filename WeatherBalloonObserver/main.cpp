@@ -14,33 +14,44 @@ int main() {
      */
 
 
-    WeatherBalloon* balloon = new WeatherBalloon();         // creates an observee
+    // creates an observee on the heap
+    WeatherBalloon* balloon = new WeatherBalloon();
 
-
-    Observer* obs1 = new Observer();            // two observers
+    // creating two observers on the heap
+    Observer* obs1 = new Observer();
     Observer* obs2 = new Observer();
 
 
-
-    balloon->addObserver(obs1);             // adding the observers to the observee vector
+    // adding the observers to the observee vector
+    balloon->addObserver(obs1);
     balloon->addObserver(obs2);
 
-    balloon->setTemperature(10);      // this sets the temperature that the weatherballoon has collected and updated the
-                                    // observers
+    cout<<"The weather balloon temperature changes "<<endl;
+
+    // this sets the temperature that the weatherballoon has collected and updated the observers
+    balloon->setTemperature(10);
 
 
+    // this function prints the temps of the different observers
+    balloon->printObservers();
 
-    balloon->printObservers();          // this function prints the temps of the different observers
 
-    balloon->setTemperature(37);         // resets the temperature
+    cout<<"The weather balloon temperature changes "<<endl;
 
-    balloon->printObservers();         // prints the new temperature
+    // resets the temperature
+    balloon->setTemperature(37);
 
-    delete balloon;             // delete the observee
+    // prints the new temperature
+    balloon->printObservers();
 
+    // deleting the observee does not delete the observers. This shows that the relationship is aggregation.
+    delete balloon;
+
+    // proof that the observers still exist in memory
     cout<<obs1->getTemperature()<<endl;
     cout<<obs2->getTemperature()<<endl;
 
+    // deleting the remaining objects from the heap.
     delete obs1;
     delete obs2;
 

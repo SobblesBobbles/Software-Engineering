@@ -9,30 +9,39 @@
 using namespace std;
 
 WeatherBalloon::WeatherBalloon() {
+    // initialising the weather balloons temperature to 1.
     temperature = 1;
 }
-void WeatherBalloon::setTemperature(int t){         // sets temperature of the WeatherBalloon
+
+// sets temperature of the WeatherBalloon function
+void WeatherBalloon::setTemperature(int t){
     temperature = t;
 
-    updateAll(views);                           // function to update all of the observers
+    // function to update all of the observers
+    updateAll(views);
 
 }
 
-
-void WeatherBalloon::addObserver(Observer *observer) {          // add observer
+// add observer function
+void WeatherBalloon::addObserver(Observer *observer) {
+    // pushing a new observer into the weather balloons list of observers.
     views.push_back(observer);
 }
 
-void WeatherBalloon::printObservers(){              // print the observer temperatures
+// print the observer temperatures
+void WeatherBalloon::printObservers(){
 
     for (int i = 0; i<views.size(); i++){
+        // prints the current temperature of all the observers.
         cout<<"Observer "<<i<<" ="<<views[i]->getTemperature()<<endl;
     }
 }
 
-void WeatherBalloon::updateAll(vector<Observer*> updateView){       // updates all of the observers
+// updates all of the observers through iteration of the vector
 
+void WeatherBalloon::updateAll(vector<Observer*> updateView){
     for (int i = 0; i<updateView.size(); i++){
+        // updates the current vector index with the new temperature
         updateView[i]->update(temperature);
     }
 }

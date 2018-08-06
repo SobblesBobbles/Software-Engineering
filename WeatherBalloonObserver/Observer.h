@@ -10,13 +10,14 @@
 class Observer {
 public:
 
-
+// public functions
     Observer();
-
+    //update its current temp to a new temperature
     void update(int);
-
+    // returns the current temperature
     int getTemperature();
 
+    // private variables
 private:
     int temperature;
 
