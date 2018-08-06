@@ -28,6 +28,9 @@ public:
     WeatherBalloon();
     //adding a new observer to the list of observers of the weather balloon
     void addObserver(Observer* observer);
+    //delete an observer
+
+    void unsubscribeObserver();
     //printing this list
     void printObservers();
     // this function calls "updateAll" inside of it.

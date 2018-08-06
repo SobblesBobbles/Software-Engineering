@@ -5,6 +5,11 @@
 #ifndef OBSERVEREXAMPLE_OBSERVER_H
 #define OBSERVEREXAMPLE_OBSERVER_H
 
+/*
+ * The observer class is a class that observers another class's attributes and makes sure that its variable is
+ * up-to-date with its Observee. Here the observer monitors the weather balloons temperature variables and makes sure
+ * that its own temperature variable is in sync with the weather balloons temperature variable.
+ */
 
 
 class Observer {

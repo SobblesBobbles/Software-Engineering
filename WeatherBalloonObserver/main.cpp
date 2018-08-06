@@ -26,6 +26,8 @@ int main() {
     balloon->addObserver(obs1);
     balloon->addObserver(obs2);
 
+    balloon->unsubscribeObserver();
+
     cout<<"The weather balloon temperature changes "<<endl;
 
     // this sets the temperature that the weatherballoon has collected and updated the observers
