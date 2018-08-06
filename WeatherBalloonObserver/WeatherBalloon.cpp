@@ -45,3 +45,13 @@ void WeatherBalloon::updateAll(vector<Observer*> updateView){
         updateView[i]->update(temperature);
     }
 }
+// takes off the last observer added
+void WeatherBalloon::unsubscribeObserver() {
+ /*
+  * just for demonstration purposes, you would want to declare which observer you want to delete.
+  * However, since we dont have a unique way to seperating the different observers ( like an ID number).
+  * We will just delete the last item using vector.pop_back()
+  * */
+
+    views.pop_back();
+}
